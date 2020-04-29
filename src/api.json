@@ -4,21 +4,42 @@
             "id": 1,
             "name": "Margarita",
             "description": "Any ingredient",
-            "price": "4$",
+            "price": 4,
             "img": ""
         },
         {
             "id": 2,
             "name": "4 seasons",
             "description": "Any ingredient",
-            "price": "7$",
+            "price": 7,
             "img": ""
         },
         {
             "id": 3,
             "name": "Napolitana",
             "description": "Any ingredient",
-            "price": "8$",
+            "price": 8,
+            "img": ""
+        },
+        {
+            "id": 4,
+            "name": "New Yotk",
+            "description": "Any ingredient",
+            "price": 8,
+            "img": ""
+        },
+        {
+            "id": 5,
+            "name": "California",
+            "description": "Any ingredient",
+            "price": 4,
+            "img": ""
+        },
+        {
+            "id": 6,
+            "name": "Chicago",
+            "description": "Any ingredient",
+            "price": 12,
             "img": ""
         }
     ]

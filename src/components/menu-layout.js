@@ -25,25 +25,25 @@ const StyledTableCell = withStyles((theme) => ({
     },
 }))(TableCell);
 
-function Pizzas(props) {
+const MenuLayout = (props) => {
     const classes = useStyles();
     return(
         <TableContainer component={Paper}>
             <Table className={classes.table} aria-label="customized table">
                 <TableHead>
-                <TableRow>
-                    <StyledTableCell align="left">Picture</StyledTableCell>
-                    <StyledTableCell align="right">Name</StyledTableCell>
-                    <StyledTableCell align="right">Description</StyledTableCell>
-                    <StyledTableCell align="right">Price</StyledTableCell>
-                    <StyledTableCell align="right">Action</StyledTableCell>
-                </TableRow>
+                    <TableRow>
+                        <StyledTableCell align="center"></StyledTableCell>
+                        <StyledTableCell align="center">Name</StyledTableCell>
+                        <StyledTableCell align="center">Description</StyledTableCell>
+                        <StyledTableCell align="center">Price</StyledTableCell>
+                        <StyledTableCell align="center">Action</StyledTableCell>
+                    </TableRow>
                 </TableHead>
                 <TableBody>
                 {
                     props.pizzas.map((pizza) => {
                         return(
-                            <Pizza
+                            <Pizza 
                                 key={pizza.id}
                                 {...pizza}
                             />
@@ -56,4 +56,4 @@ function Pizzas(props) {
     );
 }
 
-export default Pizzas
+export default MenuLayout;
