@@ -1,7 +1,8 @@
 const menuReducer = (state = {
     result: [],
-    total: 0,
-    euros: 0
+    total: 5,
+    euros: 0,
+    delivery: 5
 }, action) => {
     switch (action.type) {
         case "ADD":
@@ -59,7 +60,8 @@ const menuReducer = (state = {
             const selected = state.result.filter(row => row.id === action.payload)[0];
             const newState = {'result': state.result.filter(row => row.id !== action.payload),
                               'total': state.total - selected.price,
-                              'euros': (state.total - selected.price) * 0.92 };
+                              'euros': ((state.total - selected.price) * 0.92).toFixed(2),
+                              'delivery': state.delivery };
             state  = {...newState};
         break;
     }

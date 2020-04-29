@@ -36,6 +36,10 @@ const CartLayout = (props) => {
           </div>
           <ListItemText 
                 align="left"
+                primary={`Delivery cost (USD): ${props.cart.delivery} $`} 
+          />
+          <ListItemText 
+                align="left"
                 primary={`Total (USD): ${props.cart.total} $`} 
           />
           <ListItemText 
