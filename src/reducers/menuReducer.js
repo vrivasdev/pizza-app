@@ -1,7 +1,7 @@
 const menuReducer = (state = {
     result: [],
     total: 5,
-    euros: 0,
+    euros: (5*0.92).toFixed(2),
     delivery: 5
 }, action) => {
     switch (action.type) {

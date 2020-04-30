@@ -5,6 +5,8 @@ import List from '@material-ui/core/List';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Item from './item';
+import { Button } from '@material-ui/core';
+import Delivery from './delivery';
 
 const useStyles = makeStyles((theme)=>({
     table: {
@@ -18,6 +20,16 @@ const useStyles = makeStyles((theme)=>({
 
 const CartLayout = (props) => {
     const classes = useStyles();
+    const [open, setOpen] = React.useState(false);
+
+    const handleClickOpen = () => {
+      setOpen(true);
+    };
+
+    const handleClose = () => {
+      setOpen(false);
+    };
+
     return(
         <Grid item xs={12} md={6}>
           <Typography variant="h6" className={classes.title}>
@@ -36,7 +48,7 @@ const CartLayout = (props) => {
           </div>
           <ListItemText 
                 align="left"
-                primary={`Delivery cost (USD): ${props.cart.delivery} $`} 
+                primary={`Delivery (USD): ${props.cart.delivery} $`} 
           />
           <ListItemText 
                 align="left"
@@ -46,6 +58,13 @@ const CartLayout = (props) => {
                 align="left"
                 primary={`Total (EUR): ${props.cart.euros} ‎€`} 
           />
+          {
+            (props.cart.total > props.cart.delivery) && 
+            <Button variant="contained" color="primary" onClick={handleClickOpen}>
+              Confirm
+            </Button>
+          }
+          <Delivery open={open} handleClick={handleClose} cart={props.cart}/>
         </Grid>
     );
 }
