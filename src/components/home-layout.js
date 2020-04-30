@@ -25,7 +25,7 @@ const HomeLayout = (props) => {
                 <Grid item xs={6}>
                     <Paper className={classes.paper}>
                         <h1>Menu</h1>
-                        <Menu pizzas={props.data.pizzas}></Menu>
+                        <Menu pizzas={props.data}></Menu>
                     </Paper>
                 </Grid>
                 <Grid item xs={6}>

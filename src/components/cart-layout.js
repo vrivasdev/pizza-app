@@ -6,7 +6,7 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Item from './item';
 import { Button } from '@material-ui/core';
-import Delivery from './delivery';
+import Delivery from '../containers/delivery';
 
 const useStyles = makeStyles((theme)=>({
     table: {
