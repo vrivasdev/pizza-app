@@ -2,7 +2,7 @@
 class CartService {
     getPizzas() {
         return new Promise((resolve, reject) => {
-            fetch('http://127.0.0.1:8000/menu',
+            fetch('https://pizza-api-laravel.herokuapp.com/menu',
                   {method: 'GET'})
             .then(response => response.json())
             .then(data => resolve(data))
@@ -11,7 +11,7 @@ class CartService {
     }
     saveOrder({cart, delivery}) {
         return new Promise((resolve, reject) => {
-            fetch('http://127.0.0.1:8000/order',
+            fetch('https://pizza-api-laravel.herokuapp.com/order',
                   {method: 'POST',
                    mode: 'no-cors',
                    body: JSON.stringify({
