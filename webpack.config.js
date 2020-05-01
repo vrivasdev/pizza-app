@@ -11,7 +11,7 @@ module.exports = (env) => {
     })
   ]
 
-  if (env.NODE_ENV === 'production') {
+  if (process.env.NODE_ENV === 'production') {
     plugins.push(
       new CleanWebpackPlugin(['dist'], {root: __dirname})
     )
