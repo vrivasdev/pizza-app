@@ -1,17 +1,13 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const webpack = require('webpack');
 
 module.exports = (env) => {
   const plugins = [
-    new ExtractTextPlugin("css/[name].[hash].css"),
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': process.env.NODE_ENV
-    })
+    new ExtractTextPlugin("css/[name].[hash].css")
   ]
 
-  if (process.env.NODE_ENV === 'production') {
+  if (env.NODE_ENV === 'production') {
     plugins.push(
       new CleanWebpackPlugin(['dist'], {root: __dirname})
     )
